@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Login & Registration | Codehalx</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+       <h2 class="logo">fit-HUB</h2>
+       <nav class="navigation">
+        <button class="btnlogin-popup" id="loginButton">Login</button>
+        <button class="btnlogin-popup" id="registerButton">Sign Up</button>
+       </nav>
+    </header>
+    <!-- Login Wrapper -->
+    <div class="wrapper" id="loginWrapper" style="display: none;">
+        <div class="form-box" style="color: aliceblue;">
+            <h2 style="color: aliceblue;">Login</h2>
+            <br>
+            <form action="home.html">
+                <div>
+                    <input type="text" name="username" id="username" class="name">
+                    <label for="username">Username</label>
+                </div>
+                <br>
+                <div>
+                    <input type="password" name="password" id="password" class="name"> 
+                    <label for="password">Password</label>
+                </div>
+                <br>
+                <div>
+                   <input class="submit" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Registration Wrapper -->
+    <div class="wrapper" id="registerWrapper" style="display: none;">
+        <div class="form-box" style="color: aliceblue;">
+            <h2 style="color: aliceblue;">Register</h2>
+            <br>
+            <form action="register.php" method="POST">
+                <div>
+                    <input type="text" name="name" id="name" class="name">
+                    <label for="name">Name</label>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="email" id="email" class="name"> 
+                    <label for="email">Email</label>
+                </div>
+                <br>
+                <div>
+                    <label for="gender">Gender</label><br>
+                    <select name="gender" id="gender" class="name">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="weight" >Weight (kg)</label><br>
+                    <input type="number" name="weight" id="weight" class="name">
+                </div>
+                <br>
+                <div>
+                    <label for="goal">Goal</label><br>
+                    <select name="goal" id="goal" class="name">
+                        <option value="lose_weight">Lose Weight</option>
+                        <option value="gain_muscle">Gain Muscle</option>
+                    </select>
+                </div>
+                <br>
+               
+                
+                <div>
+                    <input type="password" name="password" id="password" class="name"> 
+                    <label for="password">Password</label>
+                </div>
+                <br>
+                <div>
+                    <input type="password" name="confirm_password" id="confirm_password" class="name"> 
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+                <br>
+                <div>
+                   <input class="submit" type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#loginButton").click(function() {
+                $("#loginWrapper").show();
+                $("#registerWrapper").hide();
+            });
+
+            $("#registerButton").click(function() {
+                $("#loginWrapper").hide();
+                $("#registerWrapper").show();
+            });
+        });
+    </script>
+</body>
+</html>
